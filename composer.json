@@ -1,0 +1,16 @@
+{
+    "name": "vendor/trabalho",
+    "description": "Um trbalho da faculdade",
+    "authors": [
+        {
+            "name": "Romario Sousa",
+            "email": "estreladamanha585@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+		"psr-4" : {
+			"App\\" : "app/"
+		}
+	}
+}
