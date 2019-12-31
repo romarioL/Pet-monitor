@@ -1,14 +1,12 @@
-<?php 
+<?php
 
-namespace App; 
+namespace App;
 
-interface ILatitudeELongitude {
-	
-	
-	public function __construct($latitude, $longitude);
-	public function getLatitude();
-	public function setLatitude($latitude);
-	public function getLongitude();
-	public function setLongitude($longitude);
+interface ILatitudeELongitude
+{
+    public function __construct($latitude, $longitude);
+    public function getLatitude();
+    public function setLatitude($latitude);
+    public function getLongitude();
+    public function setLongitude($longitude);
 }
-

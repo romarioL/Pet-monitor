@@ -1,8 +1,10 @@
-<?php 
+<?php
 
 namespace App;
+
 use App\EstaLonge;
 
-interface IObservado {
-	public function monitorarPetLonge();
+interface IObservado
+{
+    public function monitorarPetLonge();
 }

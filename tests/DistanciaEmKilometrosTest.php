@@ -8,14 +8,12 @@ use App\LongitudeEmRadianos;
 use App\LatitudeELongitude;
 use App\DistanciaEmKilometros;
 
-
-
-class DistanciaEMKilometrosTest extends TestCase 
+class DistanciaEMKilometrosTest extends TestCase
 {
-	public function testCalcular()
-	{
-         $dono = new Dono("Romis", 4, 5);
-         $pet = new Pet("Bydu", 4, 5);
+    public function testCalcular()
+    {
+        $dono = new Dono("Romis", 4, 5);
+        $pet = new Pet("Bydu", 4, 5);
 
         $donoLatitude = $dono->getLatitude();
         $donoLongitude = $dono->getLongitude();
@@ -35,5 +33,5 @@ class DistanciaEMKilometrosTest extends TestCase
         $distanciaEmKilometros= $distanciaEmKilometrosObj->calcularDistanciaEmKilometros($distanciaLatitude, $distanciaLongitude, $donoLatitude, $petLatitude);
 
         $this->assertEquals(0, $distanciaEmKilometros);
-	}
+    }
 }

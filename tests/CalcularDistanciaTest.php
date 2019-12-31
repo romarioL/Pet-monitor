@@ -5,16 +5,15 @@ use App\Pet;
 use App\Dono;
 use App\DistanciaPetDono;
 
-
-class CalcularDistanciaTest extends TestCase 
+class CalcularDistanciaTest extends TestCase
 {
-	public function testCalcular()
-	{
-         $dono = new Dono("Romis", 4, 5);
-         $pet = new Pet("Bydu", 4, 5);
+    public function testCalcular()
+    {
+        $dono = new Dono("Romis", 4, 5);
+        $pet = new Pet("Bydu", 4, 5);
 
         $distancia = new DistanciaPetDono($pet, $dono);
         $distancia = $distancia->calcularDistanciaPetDono();
-         $this->assertEquals(0, $distancia);
-	}
+        $this->assertEquals(0, $distancia);
+    }
 }
