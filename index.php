@@ -6,9 +6,6 @@ require_once "vendor/autoload.php";
 use App\ConfiguradorDistancia;
 use App\Dono;
 use App\Pet;
-use App\DistanciaPetDono;
-use App\EstaLonge;
-use App\Monitoria;
 use App\Init;
 
 $distancia = new ConfiguradorDistancia(0.02);
