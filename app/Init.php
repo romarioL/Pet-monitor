@@ -19,6 +19,7 @@ class Init
     public function display()
     {
         $monitoria = new Monitoria($this->pet, $this->dono, $this->distancia);
-        return $monitoria->monitorarPetlonge();
+
+        return json_encode(["pet" => $this->pet->getNome(), "dono" => $this->dono->getNome(), "longe" => $monitoria->monitorarPetlonge()]);
     }
 }

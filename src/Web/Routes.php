@@ -16,6 +16,8 @@ $app->get('/geoloc', function (Request $request, Response $response, array $args
 
     $init = new Init($pet, $dono, $distancia);
 
-    echo $init->display();
+    header('Content-Type: application/json');
+
+    echo "<pre>" . $init->display();
 });
 $app->run();
