@@ -2,6 +2,13 @@
 
 use Src\Site\Controllers\GeolocController;
 
-$app = new \Slim\App;
-$app->get('/geoloc', GeolocController::class . ':index');
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+$c = new \Slim\Container($configuration);
+
+$app = new \Slim\App($c);
+$app->get('/geoloc', GeolocController::class .  ':index');
 $app->run();
