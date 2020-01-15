@@ -7,8 +7,8 @@ $configuration = [
         'displayErrorDetails' => true,
     ],
 ];
-$c = new \Slim\Container($configuration);
 
+$c = new \Slim\Container($configuration);
 $app = new \Slim\App($c);
-$app->get('/geoloc', GeolocController::class .  ':index');
+$app->get('/', GeolocController::class .  ':index');
 $app->run();

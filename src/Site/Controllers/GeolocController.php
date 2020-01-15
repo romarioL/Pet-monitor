@@ -22,6 +22,6 @@ class GeolocController
 
         header('Content-Type: application/json');
 
-        echo "<pre>" . $init->display();
+        return $response->write($init->display());
     }
 }
