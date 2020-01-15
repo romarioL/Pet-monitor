@@ -8,11 +8,6 @@ use App\Dono;
 use App\Pet;
 use App\Init;
 
-$distancia = new ConfiguradorDistancia(0.02);
-$dono = new Dono("Romis", -05.14, -38.09);
+use Src\RouteSender;
 
-$pet = new Pet("Bydu", -04.93, -37.97);
-
-$init = new Init($pet, $dono, $distancia);
-
- echo $init->display();
+$routes = new RouteSender();
