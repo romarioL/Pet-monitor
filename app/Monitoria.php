@@ -9,12 +9,19 @@ use App\IDono;
 use App\Sinalizador;
 use App\DistanciaPetDono;
 use App\ConfiguradorDistancia;
+use App\CalcularDistancia;
+use App\CoordenadaParaRadianos;
+use App\LatitudeELongitude;
+use App\LatitudeEmRadianos;
+use App\LongitudeEmRadianos;
+use App\DistanciaEmKilometros;
 
 class Monitoria implements IObservado
 {
     private $pet;
     private $dono;
     private $distancia;
+    private $petDono;
     
     public function __construct(IPet $pet, IDono $dono, IConfiguradorDistancia $distancia)
     {
@@ -26,7 +33,7 @@ class Monitoria implements IObservado
     public function monitorarPetLonge()
     {
         $estaLonge = new EstaLonge(new DistanciaPetDono($this->pet, $this->dono), $this->distancia);
-        if ($estaLonge->estaLonge() == true) {
+        if ($estaLonge->estaLonge(new CalcularDistancia(), new LatitudeEmRadianos(), new LongitudeEmRadianos(),new DistanciaEmKilometros()) == true) {
             $sinalizador = new Sinalizador();
             return  $sinalizador->estaLonge($this->dono);
         }

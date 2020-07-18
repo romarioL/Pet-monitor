@@ -11,21 +11,20 @@ use App\DistanciaEmKilometros;
 
 class CalcularDistancia
 {
-    public function calcular(IDistanciaPetDono $petDono)
+    public function calcular(IDistanciaPetDono $petDono, 
+    LatitudeEmRadianos $conversorRadianosLat,
+    LongitudeEmRadianos $conversorRadianosLong,
+    DistanciaEmKilometros $calculoDistancia
+    )
     {
         $latitudePet= $petDono->pet->getLatitude();
         $longitudePet = $petDono->pet->getLongitude();
         $latitudeDono = $petDono->dono->getLatitude();
         $longitudeDono = $petDono->dono->getLongitude();
         $transferirParaConverterPet = new LatitudeELongitude($latitudePet, $longitudePet);
-        $transferirParaConverterDono = new LatitudeELongitude($latitudeDono, $longitudeDono);
-        $latitudeEmRadianos = new LatitudeEmRadianos();
-        $longitudeEmRadianos = new LongitudeEmRadianos();
-        $dLat = $latitudeEmRadianos->calcularLatitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
-        $dLon = $longitudeEmRadianos->calcularLongitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
-        
-        $distanciaEmKilometros = new DistanciaEmKilometros();
-        
-        return $distanciaEmKilometros->calcularDistanciaEmKilometros($dLat, $dLon, $latitudePet, $latitudeDono);
+        $transferirParaConverterDono = new LatitudeElongitude($latitudeDono, $longitudeDono);
+        $dLat = $conversorRadianosLat->calcularLatitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
+        $dLon = $conversorRadianosLong->calcularLongitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);    
+        return $calculoDistancia->calcularDistanciaEmKilometros($dLat, $dLon, $latitudePet, $latitudeDono);
     }
 }

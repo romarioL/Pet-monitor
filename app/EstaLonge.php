@@ -4,6 +4,13 @@ namespace App;
 
 use App\IDistanciaPetDono;
 use App\IConfiguradorDistancia;
+use App\CalcularDistancia;
+use App\DistanciaPetDono;
+use App\CoordenadaParaRadianos;
+use App\LatitudeELongitude;
+use App\LatitudeEmRadianos;
+use App\LongitudeEmRadianos;
+use App\DistanciaEmKilometros;
 
 class EstaLonge
 {
@@ -15,9 +22,16 @@ class EstaLonge
         $this->distancia = $distancia;
     }
     
-    public function estaLonge()
+    public function estaLonge(
+    CalcularDistancia $calculadorDistancia,
+    LatitudeEmRadianos $conversorRadianosLat,
+    LongitudeEmRadianos $conversorRadianosLong,
+    DistanciaEmKilometros $calculoDistancia)
     {
-        if ($this->petEDono->calcularDistanciaPetDono() <= $this->distancia->getDistancia()) {
+        if ($this->petEDono->calcularDistanciaPetDono($calculadorDistancia, 
+        $conversorRadianosLat, 
+        $conversorRadianosLong, 
+        $calculoDistancia) <= $this->distancia->getDistancia()) {
             return false;
         }
     
