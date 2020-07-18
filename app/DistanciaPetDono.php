@@ -14,15 +14,35 @@ use App\DistanciaEmKilometros;
 
 class DistanciaPetDono implements IDistanciaPetDono
 {
-    public $pet;
+    private $pet;
     
-    public $dono;
+    private $dono;
 
     private $petEdono;
     
     public function __construct(IPet $pet, IDono $dono)
     {
         $this->pet = $pet;
+        $this->dono = $dono;
+    }
+
+    public function getPet()
+    {
+        return $this->pet;
+    }
+
+    public function setPet(IPet $pet)
+    {
+        $this->pet = $pet;
+    }
+
+    public function getDono()
+    {
+        return $this->dono;
+    }
+
+    public function setDono(IDono $dono)
+    {
         $this->dono = $dono;
     }
     

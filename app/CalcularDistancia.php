@@ -17,10 +17,10 @@ class CalcularDistancia
     DistanciaEmKilometros $calculoDistancia
     )
     {
-        $latitudePet= $petDono->pet->getLatitude();
-        $longitudePet = $petDono->pet->getLongitude();
-        $latitudeDono = $petDono->dono->getLatitude();
-        $longitudeDono = $petDono->dono->getLongitude();
+        $latitudePet= $petDono->getPet()->getLatitude();
+        $longitudePet = $petDono->getPet()->getLongitude();
+        $latitudeDono = $petDono->getDono()->getLatitude();
+        $longitudeDono = $petDono->getDono()->getLongitude();
         $transferirParaConverterPet = new LatitudeELongitude($latitudePet, $longitudePet);
         $transferirParaConverterDono = new LatitudeElongitude($latitudeDono, $longitudeDono);
         $dLat = $conversorRadianosLat->calcularLatitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
