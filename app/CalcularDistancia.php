@@ -12,10 +12,10 @@ use App\DistanciaEmKilometros;
 class CalcularDistancia
 {
     public function calcular(IDistanciaPetDono $petDono, 
-    LatitudeEmRadianos $conversorRadianosLat,
-    LongitudeEmRadianos $conversorRadianosLong,
-    DistanciaEmKilometros $calculoDistancia
-    )
+                             LatitudeEmRadianos $conversorRadianosLat,
+                             LongitudeEmRadianos $conversorRadianosLong,
+                             DistanciaEmKilometros $calculoDistancia
+                              )
     {
         $latitudePet= $petDono->getPet()->getLatitude();
         $longitudePet = $petDono->getPet()->getLongitude();

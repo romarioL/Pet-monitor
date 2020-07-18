@@ -47,9 +47,9 @@ class DistanciaPetDono implements IDistanciaPetDono
     }
     
     public function calcularDistanciaPetDono(CalcularDistancia $distancia, 
-    LatitudeEmRadianos $conversorRadianosLat,
-    LongitudeEmRadianos $conversorRadianosLong,
-    DistanciaEmKilometros $calculoDistancia)
+                                             LatitudeEmRadianos $conversorRadianosLat,
+                                             LongitudeEmRadianos $conversorRadianosLong,
+                                             DistanciaEmKilometros $calculoDistancia)
     {
         return $distancia->calcular($this, $conversorRadianosLat, $conversorRadianosLong, $calculoDistancia);
     }
