@@ -11,12 +11,12 @@ use App\DistanciaEmKilometros;
 
 class CalcularDistancia
 {
-    public function calcular(IDistanciaPetDono $petDono, 
-                             LatitudeEmRadianos $conversorRadianosLat,
-                             LongitudeEmRadianos $conversorRadianosLong,
-                             DistanciaEmKilometros $calculoDistancia
-                              )
-    {
+    public function calcular(
+        IDistanciaPetDono $petDono,
+        LatitudeEmRadianos $conversorRadianosLat,
+        LongitudeEmRadianos $conversorRadianosLong,
+        DistanciaEmKilometros $calculoDistancia
+    ) {
         $latitudePet= $petDono->getPet()->getLatitude();
         $longitudePet = $petDono->getPet()->getLongitude();
         $latitudeDono = $petDono->getDono()->getLatitude();
@@ -24,7 +24,7 @@ class CalcularDistancia
         $transferirParaConverterPet = new LatitudeELongitude($latitudePet, $longitudePet);
         $transferirParaConverterDono = new LatitudeElongitude($latitudeDono, $longitudeDono);
         $dLat = $conversorRadianosLat->calcularLatitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
-        $dLon = $conversorRadianosLong->calcularLongitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);    
+        $dLon = $conversorRadianosLong->calcularLongitudeEmRadianos($transferirParaConverterPet, $transferirParaConverterDono);
         return $calculoDistancia->calcularDistanciaEmKilometros($dLat, $dLon, $latitudePet, $latitudeDono);
     }
 }
