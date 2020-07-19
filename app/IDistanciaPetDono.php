@@ -13,8 +13,8 @@ interface IDistanciaPetDono
 {
     public function __construct(IPet $pet, IDono $dono);
     public function calcularDistanciaPetDono(CalcularDistancia $distancia, 
-    LatitudeEmRadianos $conversorRadianosLat,
-    LongitudeEmRadianos $conversorRadianosLong,
-    DistanciaEmKilometros $calculoDistancia 
-    );
+                                             LatitudeEmRadianos $conversorRadianosLat,
+                                             LongitudeEmRadianos $conversorRadianosLong,
+                                             DistanciaEmKilometros $calculoDistancia 
+                                                );
 }
