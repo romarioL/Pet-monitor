@@ -26,7 +26,8 @@ class Init
     {
         $monitoria = new Monitoria($this->pet, $this->dono, $this->distancia);
 
-        return json_encode(["pet" => $this->pet->getNome(),
+        return json_encode([
+         "pet" => $this->pet->getNome(),
          "dono" => $this->dono->getNome(),
          "longe" => $monitoria->monitorarPetlonge(
              new CalcularDistancia(),
