@@ -30,9 +30,9 @@ class EstaLonge
                         DistanciaEmKilometros $calculoDistancia)
     {
         if ($this->petEDono->calcularDistanciaPetDono($calculadorDistancia, 
-        $conversorRadianosLat, 
-        $conversorRadianosLong, 
-        $calculoDistancia) <= $this->distancia->getDistancia()) {
+                                                     $conversorRadianosLat, 
+                                                     $conversorRadianosLong, 
+                                                     $calculoDistancia) <= $this->distancia->getDistancia()) {
             return false;
         }
     
