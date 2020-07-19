@@ -6,5 +6,8 @@ use App\EstaLonge;
 
 interface IObservado
 {
-    public function monitorarPetLonge();
+    public function monitorarPetLonge(CalcularDistancia $calcularDistancia,
+                                     LatitudeEmRadianos $latitudeEmRadianos,
+                                     LongitudeEmRadianos $longitudeEmRadianos,
+                                     DistanciaEmKilometros $distancia);
 }

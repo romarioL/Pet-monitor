@@ -30,10 +30,13 @@ class Monitoria implements IObservado
         $this->distancia = $distancia;
     }
     
-    public function monitorarPetLonge()
+    public function monitorarPetLonge(CalcularDistancia $calcularDistancia,
+                                      LatitudeEmRadianos $latitudeEmRadianos,
+                                      LongitudeEmRadianos $longitudeEmRadianos,
+                                      DistanciaEmKilometros $distancia)
     {
         $estaLonge = new EstaLonge(new DistanciaPetDono($this->pet, $this->dono), $this->distancia);
-        if ($estaLonge->estaLonge(new CalcularDistancia(), new LatitudeEmRadianos(), new LongitudeEmRadianos(),new DistanciaEmKilometros()) == true) {
+        if ($estaLonge->estaLonge($calcularDistancia, $latitudeEmRadianos, $longitudeEmRadianos,$distancia) == true) {
             $sinalizador = new Sinalizador();
             return  $sinalizador->estaLonge($this->dono);
         }
