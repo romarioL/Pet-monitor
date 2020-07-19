@@ -14,7 +14,6 @@ use App\DistanciaEmKilometros;
 
 class EstaLonge
 {
-    
     private $petEDono;
     
     public function __construct(IDistanciaPetDono $petEDono, IConfiguradorDistancia $distancia)
@@ -24,15 +23,18 @@ class EstaLonge
     }
     
     public function estaLonge(
-                        CalcularDistancia $calculadorDistancia,
-                        LatitudeEmRadianos $conversorRadianosLat,
-                        LongitudeEmRadianos $conversorRadianosLong,
-                        DistanciaEmKilometros $calculoDistancia)
+        CalcularDistancia $calculadorDistancia,
+        LatitudeEmRadianos $conversorRadianosLat,
+        LongitudeEmRadianos $conversorRadianosLong,
+        DistanciaEmKilometros $calculoDistancia
+    )
     {
-        if ($this->petEDono->calcularDistanciaPetDono($calculadorDistancia, 
-                                                     $conversorRadianosLat, 
-                                                     $conversorRadianosLong, 
-                                                     $calculoDistancia) <= $this->distancia->getDistancia()) {
+        if ($this->petEDono->calcularDistanciaPetDono(
+            $calculadorDistancia,
+            $conversorRadianosLat,
+            $conversorRadianosLong,
+            $calculoDistancia
+        ) <= $this->distancia->getDistancia()) {
             return false;
         }
     
