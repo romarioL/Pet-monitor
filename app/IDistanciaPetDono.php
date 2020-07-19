@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 use App\CalcularDistancia;
 use App\DistanciaPetDono;
 use App\CoordenadaParaRadianos;
@@ -12,9 +13,10 @@ use App\DistanciaEmKilometros;
 interface IDistanciaPetDono
 {
     public function __construct(IPet $pet, IDono $dono);
-    public function calcularDistanciaPetDono(CalcularDistancia $distancia, 
-                                             LatitudeEmRadianos $conversorRadianosLat,
-                                             LongitudeEmRadianos $conversorRadianosLong,
-                                             DistanciaEmKilometros $calculoDistancia 
-                                                );
+    public function calcularDistanciaPetDono(
+        CalcularDistancia $distancia,
+        LatitudeEmRadianos $conversorRadianosLat,
+        LongitudeEmRadianos $conversorRadianosLong,
+        DistanciaEmKilometros $calculoDistancia
+    );
 }
