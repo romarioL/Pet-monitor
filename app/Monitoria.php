@@ -37,7 +37,7 @@ class Monitoria implements IObservado
         DistanciaEmKilometros $distancia
     ) {
         $estaLonge = new EstaLonge(new DistanciaPetDono($this->pet, $this->dono), $this->distancia);
-        if ($estaLonge->estaLonge($calcularDistancia, $latitudeEmRadianos, $longitudeEmRadianos, $distancia) == true) {
+        if ($estaLonge->estaLonge($calcularDistancia, $latitudeEmRadianos, $longitudeEmRadianos, $distancia)) {
             $sinalizador = new Sinalizador();
             return  $sinalizador->estaLonge($this->dono);
         }
