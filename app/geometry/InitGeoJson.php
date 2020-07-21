@@ -34,7 +34,7 @@ class InitGeoJson
         array_push($this->points, $point);
     }
 
-    public static function Run()
+    public  function Run()
     {
     }
 }
