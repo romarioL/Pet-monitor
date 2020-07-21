@@ -14,6 +14,6 @@ class Point
 
     public function exportLatitudeELongitude(): LatitudeELongitude
     {
-        return $this->latitudeElongitude;
+        return $this->latitudeELongitude;
     }
 }

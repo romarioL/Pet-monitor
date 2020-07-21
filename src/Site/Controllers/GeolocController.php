@@ -10,6 +10,7 @@ use App\Pet;
 use App\Init;
 use App\geometry\InitGeoJson;
 use App\LatitudeELongitude;
+use App\geometry\CriarGeoJson;
 
 class GeolocController
 {
@@ -26,6 +27,8 @@ class GeolocController
         $initGeoJson = new InitGeoJson();
         $initGeoJson->Init($pet, $dono);
         $initGeoJson->addPoint(new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude()));
+        $criarJson = new CriarGeoJson();
+        echo $criarJson->criarGeoJsonString("Feature", "Polygon", $initGeoJson);
 
         header('Content-Type: application/json');
 

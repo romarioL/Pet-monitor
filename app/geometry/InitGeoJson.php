@@ -33,8 +33,18 @@ class InitGeoJson
         $point = new Point($coords);
         array_push($this->points, $point);
     }
+    public function ListPoints() : array
+    {
+        $points = $this->points;
+        $arrayPoints = [];
+        foreach ($points as $point) {
+            $pointsArray = [$point->exportLatitudeELongitude()->getLatitude(), $point->exportLatitudeELongitude()->getLongitude()];
+            array_push($arrayPoints, $pointsArray);
+        }
+        return $arrayPoints;
+    }
 
-    public  function Run()
+    public function Run()
     {
     }
 }
