@@ -8,6 +8,7 @@ use App\ConfiguradorDistancia;
 use App\Dono;
 use App\Pet;
 use App\Init;
+use App\geometry\InitGeoJson;
 
 class GeolocController
 {
@@ -18,7 +19,11 @@ class GeolocController
 
         $pet = new Pet("Bydu", -04.93, -37.97);
 
+
         $init = new Init($pet, $dono, $distancia);
+
+        $initGeoJson = new InitGeoJson();
+        $initGeoJson->Init($pet, $dono);
 
         header('Content-Type: application/json');
 
