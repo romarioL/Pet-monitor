@@ -9,6 +9,7 @@ use App\Dono;
 use App\Pet;
 use App\Init;
 use App\geometry\InitGeoJson;
+use App\LatitudeELongitude;
 
 class GeolocController
 {
@@ -24,6 +25,7 @@ class GeolocController
 
         $initGeoJson = new InitGeoJson();
         $initGeoJson->Init($pet, $dono);
+        $initGeoJson->addPoint(new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude()));
 
         header('Content-Type: application/json');
 

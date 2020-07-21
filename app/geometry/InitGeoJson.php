@@ -27,4 +27,9 @@ class InitGeoJson
 
         return $this->points;
     }
+
+    public function addPoint(LatitudeELongitude $coords): void
+    {
+        array_push($this->points, $coords);
+    }
 }
