@@ -7,6 +7,7 @@ use App\IDono;
 use App\geometry\Point;
 use App\LatitudeELongitude;
 
+
 class InitGeoJson
 {
     private array $points;
@@ -32,4 +33,10 @@ class InitGeoJson
     {
         array_push($this->points, $coords);
     }
+
+    public static function Run()
+    {
+
+    }
+
 }
