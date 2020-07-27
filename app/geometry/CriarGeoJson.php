@@ -9,7 +9,7 @@ class CriarGeoJson
     public function criarGeoJsonString(
         String $type,
         String $geometry,
-        InitGeoJson $init,
+        IInitGeoJson $init,
         String $place = "Some place"
     ): String {
         $geoJsonArray = [

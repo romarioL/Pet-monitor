@@ -5,9 +5,11 @@ namespace App\geometry;
 use App\IPet;
 use App\IDono;
 use App\geometry\CreatePoint;
+use App\ILatitudeELongitude;
 use App\LatitudeELongitude;
+use App\geometry\IInitGeoJson;
 
-class InitGeoJson
+class InitGeoJson implements IInitGeoJson
 {
     private array $points;
 
@@ -28,7 +30,7 @@ class InitGeoJson
         return $this->points;
     }
 
-    public function addPoint(LatitudeELongitude $coords): void
+    public function addPoint(ILatitudeELongitude $coords): void
     {
         $point = new Point($coords);
         array_push($this->points, $point);
