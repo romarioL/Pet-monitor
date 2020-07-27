@@ -2,13 +2,13 @@
 
 namespace App\geometry;
 
-use App\LatitudeELongitude;
+use App\ILatitudeELongitude;
 
 class Point
 {
-    private LatitudeELongitude $latitudeELongitude;
+    private ILatitudeELongitude $latitudeELongitude;
 
-    public function __construct(LatitudeELongitude $latLong)
+    public function __construct(ILatitudeELongitude $latLong)
     {
         $this->latitudeELongitude = $latLong;
     }
