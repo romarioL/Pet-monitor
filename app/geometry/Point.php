@@ -1,6 +1,7 @@
 <?php
 
 namespace App\geometry;
+
 use App\LatitudeELongitude;
 
 class Point
@@ -12,8 +13,14 @@ class Point
         $this->latitudeELongitude = $latLong;
     }
 
-    public function exportLatitudeELongitude(): LatitudeELongitude
+   
+    public function exportLatitude() : float
     {
-        return $this->latitudeELongitude;
+        return $this->latitudeELongitude->getLatitude();
+    }
+
+    public function exportLongitude() : float
+    {
+        return $this->latitudeELongitude->getLongitude();
     }
 }

@@ -39,8 +39,8 @@ class InitGeoJson
         $arrayPoints = [];
         foreach ($this->points as $point) {
             $pointsArray = [
-              $point->exportLatitudeELongitude()->getLatitude(),
-              $point->exportLatitudeELongitude()->getLongitude()];
+              $point->exportLatitude(),
+              $point->exportLongitude()];
             array_push($arrayPoints, $pointsArray);
         }
         return $arrayPoints;
