@@ -8,6 +8,7 @@ use App\geometry\CreatePoint;
 use App\ILatitudeELongitude;
 use App\LatitudeELongitude;
 use App\geometry\IInitGeoJson;
+use App\geometry\CriarGeoJson;
 
 class InitGeoJson implements IInitGeoJson
 {
@@ -48,11 +49,13 @@ class InitGeoJson implements IInitGeoJson
         return $arrayPoints;
     }
 
-    public function Run(IPet $pet, IDono $dono)
+    public function Run(IPet $pet, IDono $dono, array $points) : String
     {
-        $createPoint;
-       
+        $this->Init($pet, $dono);
+        foreach ($points as $point) {
+            $this->addPoint($point);
+        }
+        $criargeoJson = new CriarGeoJson();
+        return  $criargeoJson->criarGeoJsonString("Feature", "Polygon", $this);
     }
-
-    
 }

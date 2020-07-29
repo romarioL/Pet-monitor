@@ -26,10 +26,10 @@ class GeolocController
 
         $initGeoJson = new InitGeoJson();
         $initGeoJson->Init($pet, $dono);
-        $initGeoJson->addPoint(new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude()));
-        $initGeoJson->addPoint(new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude()));
-        $criarJson = new CriarGeoJson();
-        echo  $criarJson->criarGeoJsonString("Feature", "Polygon", $initGeoJson);
+        $point = new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude());
+        $point2 = new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude());
+        $points = [$point, $point2];
+        echo  $initGeoJson->Run($pet, $dono, $points);
 
         header('Content-Type: application/json');
 
