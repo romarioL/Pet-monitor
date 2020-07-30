@@ -10,7 +10,7 @@ class CriarGeoJson
         String $type,
         String $geometry,
         IInitGeoJson $init,
-        String $place = "Some place"
+        String $place
     ): String {
         $geoJsonArray = [
             "type" =>  $type,
