@@ -29,7 +29,7 @@ class GeolocController
         $point = new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude());
         $point2 = new LatitudeELongitude($pet->getLatitude(), $pet->getLongitude());
         $points = [$point, $point2];
-        echo  $initGeoJson->Run($pet, $dono, $points);
+        echo  $initGeoJson->Run($pet, $dono, $points, "Feature", "Polygon");
 
         header('Content-Type: application/json');
 

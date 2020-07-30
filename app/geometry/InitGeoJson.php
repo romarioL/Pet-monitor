@@ -49,13 +49,18 @@ class InitGeoJson implements IInitGeoJson
         return $arrayPoints;
     }
 
-    public function Run(IPet $pet, IDono $dono, array $points) : String
+    public function Run(IPet $pet,
+                        IDono $dono,
+                        array $points,
+                        String $type,
+                        String $geometry, 
+                        String $place = "Some place") : String
     {
         $this->Init($pet, $dono);
         foreach ($points as $point) {
             $this->addPoint($point);
         }
         $criargeoJson = new CriarGeoJson();
-        return  $criargeoJson->criarGeoJsonString("Feature", "Polygon", $this);
+        return  $criargeoJson->criarGeoJsonString($type, $geometry, $this, $place);
     }
 }
