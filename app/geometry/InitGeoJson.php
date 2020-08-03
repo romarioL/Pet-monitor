@@ -4,7 +4,6 @@ namespace App\geometry;
 
 use App\IPet;
 use App\IDono;
-use App\geometry\CreatePoint;
 use App\ILatitudeELongitude;
 use App\LatitudeELongitude;
 use App\geometry\IInitGeoJson;
